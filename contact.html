@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Salon Orchard</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+		<meta charset="UTF-8">
+
+		<link rel="icon" type="image/png" href="/assets/icons/logo-black-transparent.png">
+		
+		<link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+		<link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
+		<link rel="stylesheet" type="text/css" href="/styles/index.css">
+	</head>
+
+	<body>
+
+		<div class="container">
+
+			<div class="navigation">
+				<a class="transition" href="index.html">Home</a>
+				<a class="transition" href="about.html">Stylists</a>
+				<a class="transition" href="contact.html">Contact</a>
+			</div>
+
+			<div class="main">
+				<div class="title">
+					<h1>Contact</h1>
+				</div>
+				<div class="main-content">					
+					<div class="contact-info five columns">
+						<h3>Salon Orchard</h3>
+						<a class="address transition" href="//maps.google.com/?q=189%20Orchard%20ST%20New%20York,%20NY%2010002">189 Orchard Street New York NY 10002</a>
+						<a class="number transition" href="tel:+12127800900">212-780-0900</a>
+						<a class="email transition" href="mailto:info@salonorchardnyc.com">info@salonorchardnyc.com</a>
+						<div class="map">
+							<iframe
+								class="google-map"
+							  width="100%"
+							  height="100%"
+							  frameborder="0" style="border:0"
+							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyALpB5PCFgjHZWX5SPOqtZo5eNxPHFSrbQ
+							    &zoom=16&q=Salon+Orchard+NYC,New+York+NY" async>
+							</iframe>
+						</div>
+					</div>
+					<div class="contact-form six columns u-pull-right">
+						<form action="http://salonorchardnyc.com/serverside/contact.php" method="post">
+						  <div class="row">
+						    <div class="six columns">
+						      <label for="email">Your email</label>
+						      <input name="email" class="u-full-width" type="email" placeholder="youremail@email.com" id="email" required>
+						    </div>
+						    <div class="six columns">
+						      <label for="reason">Reason</label>
+						      <select class="u-full-width" id="reason" name="reason">
+						        <option value="questions">Questions</option>
+						        <option value="feedback">Feedback</option>
+						        <option value="booking">Book Appointment</option>
+						      </select>
+						    </div>
+						  </div>
+						  <label for="message">Message</label>
+						  <textarea class="u-full-width" placeholder="Please enter your message here!" id="message" name="message" required></textarea>
+						  <input class="button-primary transition" type="submit" value="Submit" onclick="confirmSubmit()">
+						  <label class="self-copy">
+						    <input type="checkbox" name="copy">
+						    <span class="label-body">Send a copy to yourself</span>
+						  </label>						  
+						</form>
+					</div>
+				</div>
+			</div>
+			
+		</div>		
+
+		<script type="text/javascript">
+			var confirmSubmit = function () {
+				alert('Thank you for the message!');
+			}
+		</script>
+
+	</body>
+
+</html>

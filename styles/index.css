@@ -1,0 +1,162 @@
+html, body, div, img, p, a, span {
+	color: #000;
+	margin: 0;
+	font-family: 'Chalet', Helvetica, Arial, sans-serif;
+}
+a {
+	text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+@font-face { 
+	font-family: 'Chalet'; 
+	src: url('/assets/fonts/Chalet/chalet-parisnineteensixty.eot') format('embedded-opentype'),
+			 url('/assets/fonts/Chalet/chalet-parisnineteensixty.ttf') format('truetype'),
+			 url('/assets/fonts/Chalet/chalet-parisnineteensixty.woff') format('woff'); 
+}
+
+.transition {
+	-webkit-transition: all .2s ease-in;
+	-moz-transition: all .2s ease-in;
+	-ms-transition: all .2s ease-in;
+	transition: all .2s ease-in;
+}
+
+.vertical {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.absolute {
+	position: absolute;
+}
+
+/* NAVIGATION */
+.navigation {
+	position: fixed;
+  top: 0;
+  left: 0; 
+  right: 0; 
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top: 0px;  
+  z-index: 1;
+}
+.navigation a {
+	margin: 0 10px;
+}
+@media only screen and (min-width: 400px) {
+	.navigation {
+		border-bottom-left-radius: 30px;
+	  border-bottom-right-radius: 30px;	
+	}
+}
+/* end NAVIGATION */
+
+/* MAIN - Home */
+.main {
+	margin: 100px 0 50px;
+	text-align: center;
+}
+.main .contact-info {
+	margin: 20px 0;
+}
+.main .contact-info a {
+	display: block;
+	font-size: 1.5rem;
+}
+.main .contact-info .number {
+	display: block;
+  width: 150px;
+  margin: 20px auto;
+  font-size: 2rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.main .contact-info .hours {
+	width: 270px;
+	margin: 0 auto;
+	text-align: left;
+}
+.main .contact-info .hours .row span:last-child {
+	float: right;
+}
+.main .contact-info .hours span {
+	display: inline-block;
+}
+.main .contact-info .book {
+	display: inline-block;
+	margin: 30px 0 0;
+}
+.main .main-content .menu img {
+	width: 100%;
+}
+.main .main-content .facebook .title {
+	margin: 0 0 50px;
+}
+@media only screen and (min-width: 850px) {
+	.main .main-content .menu,
+	.main .main-content .facebook {
+		padding: 0 10%;
+	}
+}
+/* end MAIN - Home */
+
+/* MAIN - Stylists */
+/*.main .main-content {
+	margin: 50px 0 0;
+}*/
+.main .main-content .profile {	
+	text-align: left;
+}
+.main .main-content .profile.chie {
+	margin-top: 50px;
+}
+.main .main-content .summary p,
+.main .main-content .avatar img {
+	margin-bottom: 50px;
+}
+.main .main-content .avatar {
+	display: none;
+}
+.main .main-content .avatar img {
+	width: 100%;
+	border-radius: 15px;
+}
+@media only screen and (min-width: 500px) {
+	.main .main-content .avatar {
+		display: inline-block;
+	}
+}
+/* end MAIN - Stylists */
+
+/* MAIN - Contact */
+.main .map {
+	height: 400px;
+	margin: 30px 0 0;
+}
+.main .contact-form {	
+	margin: 20px 0 0;
+	text-align: left;
+}
+.main .contact-form .button-primary {
+	float: left;
+}
+.main .contact-form .self-copy {
+	float: right;
+}
+@media only screen and (min-width: 550px) {
+	.main .contact-form {
+		margin: 100px 0 0;
+	}
+}
+/* end MAIN - Contact */
