@@ -19,24 +19,34 @@ if ($_POST) {
 	$content = $_POST['message'];
 	$copy = $_POST['copy'];
 
-	$recipient = 'sunlee.newyork@gmail.com';
+	$mail = new PHPMailer;
+
+	//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+	$mail->isSMTP();                                      // Set mailer to use SMTP
+	$mail->Host = 'a2plcpnl0201.prod.iad2.secureserver.net';  // Specify main and backup SMTP servers
+	$mail->SMTPAuth = true;                               // Enable SMTP authentication
+	$mail->Username = 'info@salonorchard.com';                 // SMTP username
+	$mail->Password = 'orchard189';                           // SMTP password
+	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+	$mail->Port = 465;                                    // TCP port to connect to
+
+	$mail->From = $email;
 	if ($copy) {
-		$recipient .= ', ' . $email;
+		$mail->addCC($copy);
 	}
 
-	$subject  = "Inquiry from SalonOrchardNYC.com: " . ucfirst($reason);
+	$mail->Subject = "Inquiry from SalonOrchardNYC.com: " . ucfirst($reason);
+	$mail->Body    = "<html><head></head><body>";
+	$mail->Body    .= "<h2>" .ucfirst($reason). "</h2>";
+	$mail->Body    .= "<p>" .$content. "</p>";
+	$mail->Body    .= "</body></html>";
 
-	$headers .= "From: " .$email. "\r\n";
-	$headers .= "MIME-Version: 1.0\r\n";
-	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-	$message  = "<html><head></head><body>";
-	$message .= "<h2>" .ucfirst($reason). "</h2>";
-	$message .= "<p>" .$content. "</p>";
-	$message .= "</body></html>";
-
-	if (!mail($recipient, $subject, $message, $headers)) {
-		die("Email failed to send.");
+	if(!$mail->send()) {
+	    echo 'Message could not be sent.';
+	    echo 'Mailer Error: ' . $mail->ErrorInfo;
+	} else {
+	    echo 'Message has been sent';
 	}
 
 }
